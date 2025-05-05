@@ -9,6 +9,10 @@ export class App extends React.Component<{}, State> {
     keyValue: '',
   };
 
+  handleKeyUp = (event: KeyboardEvent): void => {
+    this.setState({ keyValue: event.key });
+  };
+
   componentDidMount(): void {
     document.addEventListener('keyup', (event: KeyboardEvent) => {
       this.handleKeyUp(event);
@@ -20,10 +24,6 @@ export class App extends React.Component<{}, State> {
       this.handleKeyUp(event);
     });
   }
-
-  handleKeyUp = (event: KeyboardEvent): void => {
-    this.setState({ keyValue: event.key });
-  };
 
   render(): React.ReactNode {
     const { keyValue } = this.state;
