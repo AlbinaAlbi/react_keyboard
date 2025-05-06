@@ -4,7 +4,11 @@ type State = {
   keyValue: string;
 };
 
-export class App extends React.Component<{}, State> {
+type Property = {
+  handleKeyUp: (event: KeyboardEvent) => void;
+};
+
+export class App extends React.Component<Property, State> {
   state: State = {
     keyValue: '',
   };
